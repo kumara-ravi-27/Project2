@@ -46,3 +46,12 @@
   box-sizing: border-box;
   text-align: left; /* left align text */
 }
+
+
+
+img {
+  max-width: 100%;  /* image won’t exceed container width */
+  height: auto;     /* maintain aspect ratio */
+}
+
+
