@@ -1,0 +1,48 @@
+.sql-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto; /* center horizontally */
+  color: #222;
+  text-align: left; /* force left alignment */
+  height: 90vh; /* occupy most viewport height */
+  overflow-y: auto; /* vertical scroll if needed */
+  overflow-x: hidden; /* prevent horizontal scroll */
+  box-sizing: border-box;
+}
+
+.sql-title {
+  color: #007acc;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sql-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  text-align: left;
+}
+
+.sql-question {
+  color: #005a9e;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.sql-answer {
+  background-color: #f4f4f4;
+  padding: 12px;
+  border-radius: 4px;
+  white-space: pre-wrap;  /* wrap long lines */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 100%;
+  word-break: break-word;
+  box-sizing: border-box;
+  text-align: left; /* left align text */
+}

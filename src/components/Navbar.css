@@ -1,0 +1,107 @@
+/* Wrapper flex to hold sidebar and content */
+.app-wrapper {
+  display: flex;
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Toggle Button - always fixed top left */
+.nav-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #282c34;
+  cursor: pointer;
+  z-index: 1100;
+  display: none; /* hidden on desktop */
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  left: -250px;  /* hidden initially */
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #282c34;
+  padding-top: 60px; /* space for toggle */
+  box-sizing: border-box;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.nav-item {
+  padding: 15px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+
+.nav-item:hover {
+  background-color: #3f51b5;
+}
+
+.nav-item.active {
+  background-color: #61dafb;
+  color: #282c34;
+  font-weight: bold;
+}
+
+/* Main content area */
+.main-content {
+  flex-grow: 1;
+  margin-left: 0;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sidebar open on desktop: always visible */
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none;
+  }
+  .sidebar {
+    left: 0;
+    position: relative;
+    width: 250px;
+    padding-top: 20px;
+  }
+  .main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+  }
+}
+
+/* Show toggle button and sidebar hidden on mobile */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    color: #61dafb;
+  }
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
